@@ -14,6 +14,7 @@ public class DeckMamager : MonoBehaviour
     public Button btnStart;
     [Header("洗牌後牌組")]
     public Transform tranShuffle;
+    
 
     /// <summary>
     /// 牌組清單
@@ -173,9 +174,12 @@ public class DeckMamager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 開始遊戲
+    /// </summary>
     private void StartBattle()
     {
         Shuffle();
-        Shuffle();
+        BattleManager.instance.StartBattle();
     }
 }
