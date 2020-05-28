@@ -21,6 +21,8 @@ public class DeckMamager : MonoBehaviour
     /// </summary>
     public List<CardData> deck = new List<CardData>();
 
+    public List<GameObject> deckGameObject = new List<GameObject>();
+
     /// <summary>
     /// 牌組管理器實體物件
     /// </summary>
@@ -171,6 +173,8 @@ public class DeckMamager : MonoBehaviour
             temp.Find("描述").GetComponent<Text>().text = card.description;
             // 尋找圖片子物件.圖片 = 來源.載入<圖片>(檔案名稱)
             temp.Find("遮色片").Find("圖片").GetComponent<Image>().sprite = Resources.Load<Sprite>(card.file);
+            // 將生出來的卡牌物件存放到清單內
+            deckGameObject.Add(temp.gameObject);
         }
     }
 
